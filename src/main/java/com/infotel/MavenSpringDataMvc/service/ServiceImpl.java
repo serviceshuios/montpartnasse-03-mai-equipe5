@@ -43,10 +43,9 @@ public class ServiceImpl implements Iservice {
 	}
 
 	@Override
-	public int modifierCargaison(Cargaison c) {
-		cargaisonRepository.save(c);
-		return 1;
-	}
+	public Cargaison modifierCargaison(Cargaison c) {
+		return cargaisonRepository.save(c);
+		}
 
 	@Override
 	public void supprimerCargaison(int idCargaison) {

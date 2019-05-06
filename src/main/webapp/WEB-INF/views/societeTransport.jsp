@@ -35,17 +35,15 @@
 					<td><f:errors path="dateCreation" cssClass="error"/></td>
 				</tr>
 				
-<!-- 				<select class="form-group" name="idCargaison"> -->
-<!-- 						<optgroup> -->
-<!-- 								 <option value="0">-</option> -->
+<%--  				<f:select path="cargaison">   --%>
+<%-- 								 <f:option value="0" label="---"/> --%>
 <%-- 								<c:if test="${!empty cargaisons}"> --%>
-<%-- 									<c:forEach items="${cargaisons}" var="c">  --%>
-<%-- 									<option value="${c.idCargaison}"><c:out value="${c.nomCargaison}, ${c.depart}, ${c.destination}"></c:out> --%>
-<!-- 									</option> -->
-<%-- 									</c:forEach> --%>
+<%-- 									<f:options items="${cargaisons}" value="${cargaison.idCargaison}">  --%>
+<%-- 									<c:out value="${cargaison.nomCargaison}, ${cargaison.depart}, ${cargaison.destination}"></c:out> --%>
+<%-- 									</f:options> --%>
+<!-- 									</> -->
 <%-- 								</c:if> --%>
-<!-- 						</optgroup> -->
-<!-- 					</select> -->
+<%-- 					</f:select> --%>
 				
 				<tr>
 					<td><input type="submit" value="enregistrer" /></td>
@@ -61,9 +59,10 @@
 				<th>Nom de la société:</th>
 				<th>Numéro Siret:</th>
 				<th>Date de création:</th>
-<!-- 				<th>Cargaison</th> -->
 				<th>SUPPRIMER</th>
 				<th>MODIFIER</th>
+		<!-- 	<th>Nom de la cargaison:</th> -->
+				
 			</tr>
 			<c:forEach var="st" items="${societeTransports}">
 				<tr>
@@ -73,6 +72,7 @@
 					<td>${st.dateCreation}</td>
 					<td><a href="deleteSociete?idSociete=${st.idSociete}">supprimer</a></td>  <!-- ?id vient de la classe Societe -->
 					<td><a href="editSociete?idSociete=${st.idSociete}">editer</a></td>
+				<!-- 	<td>${st.cargaisons.idCargaison}</td> -->
 				</tr>
 			</c:forEach>
 		</table>

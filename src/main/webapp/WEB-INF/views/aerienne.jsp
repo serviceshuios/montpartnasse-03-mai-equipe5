@@ -64,16 +64,16 @@
 				<th>SUPPRIMER</th>
 				<th>MODIFIER</th>
 			</tr>
-			<c:forEach var="c" items="${cargaisons}">
+			<c:forEach var="a" items="${cargaisons}">
 				<tr>
-					<td>${c.idCargaison}</td>
-					<td>${c.nomCargaison}</td>
-					<td>${c.depart}</td>
-					<td>${c.destination}</td>
-					<td>${c.numVol}</td>
-					<td>${c.taxe}</td>
-					<td><a href="deleteCargaison?idCargaison=${c.idCargaison}">supprimer</a></td>  <!-- ?id vient de la classe Personne -->
-					<td><a href="editCargaison?idCargaison=${c.idCargaison}">editer</a></td>
+					<td>${a.idCargaison}</td>
+					<td>${a.nomCargaison}</td>
+					<td>${a.depart}</td>
+					<td>${a.destination}</td>
+					<td>${a.numVol}</td>
+					<td>${a.taxe}</td>
+					<td><a href="deleteCargaison?idCargaison=${a.idCargaison}">supprimer</a></td>  
+					<td><a href="editCargaison?idCargaison=${a.idCargaison}">editer</a></td>
 				</tr>
 			</c:forEach>
 		</table>

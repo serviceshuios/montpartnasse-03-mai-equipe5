@@ -15,6 +15,8 @@ public class Routiere extends Cargaison{
 	
 	private String immatriculation;
 	private double peage;
+	
+	
 	public String getImmatriculation() {
 		return immatriculation;
 	}

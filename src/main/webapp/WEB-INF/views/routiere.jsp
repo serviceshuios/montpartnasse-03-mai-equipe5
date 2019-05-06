@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- <link rel="stylesheet" type="text/style" href="<%=request.getContextPath()%>/resources/css/style.css"> 
+<link rel="stylesheet" type="text/style"
+	href="<%=request.getContextPath()%>/resources/css/style.css">
 
 
 <title>Cargaison Routiere</title>
@@ -16,37 +17,37 @@
 	<div>
 		<f:form modelAttribute="routiere" method="POST" action="saveRoutiere">
 			<table>
-					
+
 				<tr>
-					<td><f:hidden path="idCargaison"/> </td>
+					<td><f:hidden path="idCargaison" /></td>
 				</tr>
 				<tr>
 					<td>Nom de la cargaison:</td>
 					<td><f:input path="nomCargaison" /></td>
-					<td><f:errors path="nomCargaison" cssClass="error"/></td>
+					<td><f:errors path="nomCargaison" cssClass="error" /></td>
 				</tr>
 				<tr>
 					<td>Départ:</td>
 					<td><f:input path="depart" /></td>
-					<td><f:errors path="depart" cssClass="error"/></td>
+					<td><f:errors path="depart" cssClass="error" /></td>
 				</tr>
 				<tr>
 					<td>Destination:</td>
 					<td><f:input path="destination" /></td>
-					<td><f:errors path="destination" cssClass="error"/></td>
+					<td><f:errors path="destination" cssClass="error" /></td>
 				</tr>
-					<tr>
+				<tr>
 					<td>Immatriculation:</td>
 					<td><f:input path="immatriculation" /></td>
-					<td><f:errors path="immatriculation" cssClass="error"/></td>
-					</tr>
-					<tr>
+					<td><f:errors path="immatriculation" cssClass="error" /></td>
+				</tr>
+				<tr>
 					<td>Peage:</td>
 					<td><f:input path="peage" /></td>
-					<td><f:errors path="peage" cssClass="error"/></td>
-					</tr>
-					
-				</td>				
+					<td><f:errors path="peage" cssClass="error" /></td>
+				</tr>
+
+				</td>
 				<tr>
 					<td><input type="submit" value="enregistrer" /></td>
 				</tr>
@@ -73,7 +74,7 @@
 					<td>${c.destination}</td>
 					<td>${c.immatriculation}</td>
 					<td>${c.peage}</td>
-					<td><a href="deleteCargaison?idCargaison=${c.idCargaison}">supprimer</a></td>  <!-- ?id vient de la classe Personne -->
+					<td><a href="deleteCargaison?idCargaison=${c.idCargaison}">supprimer</a></td>
 					<td><a href="editCargaison?idCargaison=${c.idCargaison}">editer</a></td>
 				</tr>
 			</c:forEach>

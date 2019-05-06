@@ -7,7 +7,7 @@ import com.infotel.MavenSpringDataMvc.metier.SocieteTransport;
 
 public interface Iservice {
 	public Cargaison ajouterCargaison (Cargaison c);
-	public int modifierCargaison (Cargaison c);
+	public Cargaison modifierCargaison (Cargaison c);
 	public void supprimerCargaison (int idCargaison);
 	public Iterable<Cargaison> findAllCargaisons();
 	public Cargaison affichageCargaison(int idCargaison);
