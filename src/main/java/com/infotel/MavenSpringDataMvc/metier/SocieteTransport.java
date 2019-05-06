@@ -3,6 +3,7 @@ package com.infotel.MavenSpringDataMvc.metier;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,7 +13,7 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Component
-@Table(name="societeTransport")
+@Entity
 public class SocieteTransport {
 
 		@Id
@@ -61,9 +62,7 @@ public class SocieteTransport {
 		public String toString() {
 			return "SocieteTransport [idSociete=" + idSociete + ", nomSociete=" + nomSociete + ", numSiret=" + numSiret
 					+ ", dateCreation=" + dateCreation + "]";
-		}
-		
-		
+		}	
 
 }
 
