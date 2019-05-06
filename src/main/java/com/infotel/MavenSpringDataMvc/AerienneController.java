@@ -21,36 +21,36 @@ public class AerienneController {
 	public String lister(Model model) {
 		model.addAttribute("aerienne", new Aerienne());
 	
-		model.addAttribute("cargaisons", service.findAllCargaisons());
+		model.addAttribute("cargaisons", service.findAllAeriennes());
 		return "aerienne"; 
 	}
 
 	@RequestMapping(value = "/saveAerienne")
 	    public String save(Aerienne aerienne,  Model model) {
 	        if (aerienne.getIdCargaison() == 0) {
-	            service.ajouterCargaison(aerienne);
+	            service.ajouterAerienne(aerienne);
 	            model.addAttribute("aerienne", new Aerienne());
-	            model.addAttribute("cargaisons", service.findAllCargaisons());
+	            model.addAttribute("aeriennes", service.findAllAeriennes());
 	            return "aerienne";
 	        } else {
-	            service.modifierCargaison(aerienne);
+	            service.modifierAerienne(aerienne);
 	            model.addAttribute("aerienne", new Aerienne());
-	            model.addAttribute("cargaisons", service.findAllCargaisons());
+	            model.addAttribute("aeriennes", service.findAllAeriennes());
 	            return "aerienne";
 	        }
 	}
 
 	@RequestMapping(value = "/deleteAerienne")
     public String delete(@RequestParam int idCargaison, Model model) {
-        service.supprimerCargaison(idCargaison);
+        service.supprimerAerienne(idCargaison);
         model.addAttribute("aerienne", new Aerienne());
-        model.addAttribute("cargaisons", service.findAllCargaisons());
+        model.addAttribute("aeriennes", service.findAllAeriennes());
         return "aerienne";
     }
     @RequestMapping(value = "/editAerienne")
     public String edit(@RequestParam int idCargaison, Model model) {
-    	 model.addAttribute("aerienne", service.affichageCargaison(idCargaison));
-         model.addAttribute("cargaisons", service.findAllCargaisons());
-         return "aerienne";
+    	 model.addAttribute("aerienne", service.affichageAerienne(idCargaison));
+    	 model.addAttribute("aeriennes", service.findAllAeriennes());
+    	 return "aerienne";
     }
 }

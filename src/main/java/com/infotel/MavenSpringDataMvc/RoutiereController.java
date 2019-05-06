@@ -19,22 +19,22 @@ public class RoutiereController {
 	@RequestMapping(value = "/routiere", method = RequestMethod.GET)
 	public String lister(Model model) {
 		model.addAttribute("routiere", new Routiere());
-		model.addAttribute("cargaisons", service.findAllCargaisons());
+		model.addAttribute("routieres", service.findAllRoutieres());
 		return "routiere"; 
 	}
 
 	@RequestMapping(value = "/saveRoutiere")
 	    public String save(Routiere routiere,  Model model) {
 	        if (routiere.getIdCargaison() == 0) {
-	            service.ajouterCargaison(routiere);
+	            service.ajouterRoutiere(routiere);
 	            model.addAttribute("routiere", new Routiere());
-	            model.addAttribute("cargaisons", service.findAllCargaisons());
+	    		model.addAttribute("routieres", service.findAllRoutieres());
 	            return "routiere";
 	            
 	        } else {
-	            service.modifierCargaison(routiere);
+	            service.modifierRoutiere(routiere);
 	            model.addAttribute("routiere", new Routiere());
-	            model.addAttribute("cargaisons", service.findAllCargaisons());
+	    		model.addAttribute("routieres", service.findAllRoutieres());
 	            return "routiere";
 	        }
 	}
@@ -42,15 +42,15 @@ public class RoutiereController {
 	
 	@RequestMapping(value = "/deleteRoutiere")
     public String delete(@RequestParam int idCargaison, Model model) {
-        service.supprimerCargaison(idCargaison);
+        service.supprimerRoutiere(idCargaison);
         model.addAttribute("routiere", new Routiere());
-        model.addAttribute("cargaisons", service.findAllCargaisons());
+		model.addAttribute("routieres", service.findAllRoutieres());
         return "routiere";
     }
     @RequestMapping(value = "/editRoutiere")
     public String edit(@RequestParam int idCargaison, Model model) {
-    	 model.addAttribute("routiere", service.affichageCargaison(idCargaison));
-         model.addAttribute("cargaisons", service.findAllCargaisons());
+    	 model.addAttribute("routiere", service.affichageRoutiere(idCargaison));
+ 		model.addAttribute("routieres", service.findAllRoutieres());
          return "routiere";
     }
 }
