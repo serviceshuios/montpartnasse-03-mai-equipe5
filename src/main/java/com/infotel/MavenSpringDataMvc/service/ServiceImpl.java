@@ -188,6 +188,9 @@ public class ServiceImpl implements Iservice {
 		return aerienneRepository.findById(idCargaison).get();
 	}
 
+	/**
+	 * Methode permettant d'ajouter une cargaison à une societe
+	 */
 	@Override
 	public int ajouterCargaisonSociete(int idSociete, int idCargaison) {
 		routiereRepository.ajouterCargaisonSociete(idSociete, idCargaison);
