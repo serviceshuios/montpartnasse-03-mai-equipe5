@@ -24,7 +24,7 @@ public class SocieteTransportController {
 		return "societeTransport"; 
 	}
 
-	@RequestMapping(value = "/saveSocieteTransport")
+	@RequestMapping(value = "/saveSociete")
 	    public String save(SocieteTransport societeTransport,  Model model) {
 	        if (societeTransport.getIdSociete() == 0) {
 	            service.ajouterSocieteTransport(societeTransport);
