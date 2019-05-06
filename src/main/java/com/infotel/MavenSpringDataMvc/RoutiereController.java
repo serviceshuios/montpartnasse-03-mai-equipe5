@@ -13,50 +13,46 @@ import com.infotel.MavenSpringDataMvc.metier.Routiere;
 import com.infotel.MavenSpringDataMvc.service.Iservice;
 
 @Controller
-public class CargaisonController {
+public class RoutiereController {
 	
 	@Autowired
 	private Iservice service;
 
-	@RequestMapping(value = "/cargaison", method = RequestMethod.GET)
+	@RequestMapping(value = "/routiere", method = RequestMethod.GET)
 	public String lister(Model model) {
-		model.addAttribute("cargaison", new Routiere());
-		//model.addAttribute("routiere", new Routiere());
-		model.addAttribute("cargaison", new Aerienne());
-		//model.addAttribute("aerienne", new Aerienne());
+		model.addAttribute("routiere", new Routiere());
+	
 		model.addAttribute("cargaisons", service.findAllCargaisons());
-		return "cargaison"; 
+		return "routiere"; 
 	}
 
-	@RequestMapping(value = "/saveCargaison")
-	    public String save(Cargaison cargaison,  Model model) {
-	        if (cargaison.getIdCargaison() == 0) {
-	            service.ajouterCargaison(cargaison);
-	            model.addAttribute("cargaison", new Routiere());
-	    		model.addAttribute("cargaison", new Aerienne());
+	@RequestMapping(value = "/saveRoutiere")
+	    public String save(Routiere routiere,  Model model) {
+	        if (routiere.getIdCargaison() == 0) {
+	            service.ajouterCargaison(routiere);
+	            model.addAttribute("routiere", new Routiere());
 	            model.addAttribute("cargaisons", service.findAllCargaisons());
-	            return "cargaison";
+	            return "routiere";
 	        } else {
-	            service.modifierCargaison(cargaison);
-	            model.addAttribute("cargaison", new Routiere());
-	    		model.addAttribute("cargaison", new Aerienne());
+	            service.modifierCargaison(routiere);
+	            model.addAttribute("routiere", new Routiere());
 	            model.addAttribute("cargaisons", service.findAllCargaisons());
-	            return "cargaison";
+	            return "routiere";
 	        }
 	}
 
 	@RequestMapping(value = "/deleteCargaison")
     public String delete(@RequestParam int idCargaison, Model model) {
         service.supprimerCargaison(idCargaison);
-        model.addAttribute("cargaison", new Routiere());
-		model.addAttribute("cargaison", new Aerienne());
+        model.addAttribute("routiere", new Routiere());
         model.addAttribute("cargaisons", service.findAllCargaisons());
-        return "cargaison";
+        return "routiere";
     }
     @RequestMapping(value = "/editCargaison")
     public String edit(@RequestParam int idCargaison, Model model) {
-    	 model.addAttribute("cargaison", service.affichageCargaison(idCargaison));
+    	 model.addAttribute("routiere", service.affichageCargaison(idCargaison));
          model.addAttribute("cargaisons", service.findAllCargaisons());
-         return "cargaison";
+         return "routiere";
     }
 }
+
