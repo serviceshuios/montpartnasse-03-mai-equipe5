@@ -1,6 +1,14 @@
 package com.infotel.MavenSpringDataMvc.metier;
 
-public class Routiere {
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Table(name ="routiere")
+@Component
+public class Routiere extends Cargaison{
+	
+	
 	private String immatriculation;
 	private double peage;
 	public String getImmatriculation() {
