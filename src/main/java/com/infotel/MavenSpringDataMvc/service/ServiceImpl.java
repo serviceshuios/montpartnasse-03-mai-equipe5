@@ -50,52 +50,49 @@ public class ServiceImpl implements Iservice {
 
 	@Override
 	public void supprimerCargaison(int idCargaison) {
-		// TODO Auto-generated method stub
+		cargaisonRepository.deleteById(idCargaison);
 		
 	}
 
 	@Override
 	public Iterable<Cargaison> findAllCargaisons() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return cargaisonRepository.findAll();
 	}
 
 	@Override
 	public Optional<Cargaison> affichageCargaison(int idCargaison) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return cargaisonRepository.findById(idCargaison);
 	}
 
 	@Override
-	public Cargaison ajouterSocieteTransport(SocieteTransport st) {
-		// TODO Auto-generated method stub
-		return null;
+	public SocieteTransport ajouterSocieteTransport(SocieteTransport st) {
+		
+		return societeTransportRepository.save(st);
 	}
 
 	@Override
 	public int modifierSocieteTransport(SocieteTransport st) {
-		// TODO Auto-generated method stub
-		return 0;
+		societeTransportRepository.save(st);
+		return 1;
 	}
-
 
 
 	@Override
 	public Iterable<SocieteTransport> findAllSocieteTransports() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return societeTransportRepository.findAll();
 	}
 
 	@Override
 	public Optional<SocieteTransport> affichageSocieteTransport(int idSociete) {
-		// TODO Auto-generated method stub
-		return null;
+		return societeTransportRepository.findById(idSociete);
 	}
 
 	@Override
 	public void supprimerSocieteTransport(int idSociete) {
-		// TODO Auto-generated method stub
-		
+		societeTransportRepository.deleteById(idSociete);
 	}
 
 

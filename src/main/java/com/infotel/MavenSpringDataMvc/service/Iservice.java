@@ -12,7 +12,7 @@ public interface Iservice {
 	public Iterable<Cargaison> findAllCargaisons();
 	public Optional<Cargaison> affichageCargaison(int idCargaison);
 	
-	public Cargaison ajouterSocieteTransport (SocieteTransport st);
+	public SocieteTransport ajouterSocieteTransport (SocieteTransport st);
 	public int modifierSocieteTransport (SocieteTransport st);
 	public void supprimerSocieteTransport (int idSociete);
 	public Iterable<SocieteTransport> findAllSocieteTransports();
