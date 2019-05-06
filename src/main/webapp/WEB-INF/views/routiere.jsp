@@ -45,15 +45,8 @@
 					<td>Peage:</td>
 					<td><f:input path="peage" /></td>
 					<td><f:errors path="peage" cssClass="error" /></td>
-				</tr>
-				
-				<tr>
-                    <td>Id de Societe:</td>
-                    <td><f:select path="societeTransport">
-                            <f:option value="NONE" label="Selectionner une société" />
-                            <f:options items="${ societeTransports }" multiple="true"/>			
-                        </f:select></td>
-                    <td><f:errors path="societeTransport" /></td>
+		
+                    
                 </tr>
 
 				</td>
@@ -75,7 +68,6 @@
 				<th>Peage</th>
 				<th>SUPPRIMER</th>
 				<th>MODIFIER</th>
-				<th>IDSociete</th>
 			</tr>
 			<c:forEach var="c" items="${routieres}">
 				<tr>
@@ -87,7 +79,6 @@
 					<td>${c.peage}</td>
 					<td><a href="deleteRoutiere?idCargaison=${c.idCargaison}">supprimer</a></td>
 					<td><a href="editRoutiere?idCargaison=${c.idCargaison}">editer</a></td>
-					<td>${c.societeTransport.idSociete}</td>
 				</tr>
 			</c:forEach>
 		</table>
