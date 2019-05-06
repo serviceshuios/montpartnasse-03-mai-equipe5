@@ -9,7 +9,6 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>com.infotel.MavenSpringDataMvc.metier.Aerienne</class>
         <class>com.infotel.MavenSpringDataMvc.metier.Cargaison</class>
-        <class>com.infotel.MavenSpringDataMvc.metier.Routiere</class>
         <class>com.infotel.MavenSpringDataMvc.metier.SocieteTransport</class>
         <properties>
         <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />

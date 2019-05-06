@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 
- * @author IN-MP-026
+ * classe Aerienne qui herite de Cargaison
  *
  */
 @Entity

@@ -19,5 +19,5 @@ public interface RoutiereRepository extends JpaRepository<Routiere, Integer>{
 
 	@Modifying
 	@Query("update Cargaison SET societeTransport.idSociete = :x where idCargaison = :y")
-	public int ajouterPersonneAdresse(@Param("x") int idSociete, @Param("y") int idCargaison);
+	public int ajouterCargaisonSociete(@Param("x") int idSociete, @Param("y") int idCargaison);
 }
