@@ -21,7 +21,9 @@ public class CargaisonController {
 	@RequestMapping(value = "/cargaison", method = RequestMethod.GET)
 	public String lister(Model model) {
 		model.addAttribute("cargaison", new Routiere());
+		//model.addAttribute("routiere", new Routiere());
 		model.addAttribute("cargaison", new Aerienne());
+		//model.addAttribute("aerienne", new Aerienne());
 		model.addAttribute("cargaisons", service.findAllCargaisons());
 		return "cargaison"; 
 	}
