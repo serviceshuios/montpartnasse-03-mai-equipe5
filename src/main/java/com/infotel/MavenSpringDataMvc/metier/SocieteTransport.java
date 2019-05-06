@@ -1,18 +1,18 @@
 package com.infotel.MavenSpringDataMvc.metier;
 
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 @Component
-
-@Table(name="SocieteTransport")
+@Table(name="societeTransport")
 public class SocieteTransport {
 
 		@Id
@@ -21,6 +21,16 @@ public class SocieteTransport {
 		private String nomSociete;
 		private String numSiret;
 		private Date dateCreation;
+		
+		@OneToMany (mappedBy="societeTransport")
+		private List<Cargaison> cargaisons;
+		
+		public List<Cargaison> getCargaisons() {
+			return cargaisons;
+		}
+		public void setCargaisons(List<Cargaison> cargaisons) {
+			this.cargaisons = cargaisons;
+		}
 		
 		public int getIdSociete() {
 			return idSociete;

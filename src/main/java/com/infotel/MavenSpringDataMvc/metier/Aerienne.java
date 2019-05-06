@@ -1,6 +1,6 @@
 package com.infotel.MavenSpringDataMvc.metier;
 
-public class Aerienne {
+public class Aerienne extends Cargaison {
 
 	private String numVol;
 	private double taxe;
