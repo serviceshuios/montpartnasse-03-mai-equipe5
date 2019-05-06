@@ -14,6 +14,7 @@ import com.infotel.MavenSpringDataMvc.service.Iservice;
 @Controller
 public class SocieteTransportController {
 	
+	
 	@Autowired
 	private Iservice service;
 
