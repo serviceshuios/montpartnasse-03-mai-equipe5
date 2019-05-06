@@ -11,7 +11,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
-
+/**
+ * 
+ * Declaration de la classe societe de transport
+ *
+ */
 @Component
 @Entity
 public class SocieteTransport {

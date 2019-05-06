@@ -6,7 +6,11 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
-
+/**
+ * 
+ * Declaration de la classe cargaison routiere qui herite de la classe cargaison
+ *
+ */
 @Component
 @Entity
 @DiscriminatorValue("ROUT")
