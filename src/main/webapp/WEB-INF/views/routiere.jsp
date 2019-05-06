@@ -71,8 +71,8 @@
 					<td>${c.nomCargaison}</td>
 					<td>${c.depart}</td>
 					<td>${c.destination}</td>
-					<td>${c.destination}</td>
-					<td>${c.destination}</td>
+					<td>${c.immatriculation}</td>
+					<td>${c.peage}</td>
 					<td><a href="deleteCargaison?idCargaison=${c.idCargaison}">supprimer</a></td>  <!-- ?id vient de la classe Personne -->
 					<td><a href="editCargaison?idCargaison=${c.idCargaison}">editer</a></td>
 				</tr>
