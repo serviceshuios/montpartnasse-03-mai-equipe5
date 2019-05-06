@@ -17,7 +17,7 @@ public class SocieteTransportController {
 	@Autowired
 	private Iservice service;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/societe", method = RequestMethod.GET)
 	public String lister(Model model) {
 		model.addAttribute("societeTransport", new SocieteTransport());
 		model.addAttribute("societeTransports", service.findAllSocieteTransports());

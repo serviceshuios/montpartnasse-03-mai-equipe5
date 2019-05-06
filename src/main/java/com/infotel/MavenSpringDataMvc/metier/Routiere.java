@@ -1,12 +1,14 @@
 package com.infotel.MavenSpringDataMvc.metier;
 
 import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
-@Table(name ="routiere")
+
 @Component
+@Entity
 @DiscriminatorValue("ROUT")
 public class Routiere extends Cargaison{
 	
