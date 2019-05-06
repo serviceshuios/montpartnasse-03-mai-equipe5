@@ -1,5 +1,13 @@
 package com.infotel.MavenSpringDataMvc.metier;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Table(name= "aerienne")
+@Component
+@DiscriminatorValue("AERI")
 public class Aerienne extends Cargaison {
 
 	private String numVol;
