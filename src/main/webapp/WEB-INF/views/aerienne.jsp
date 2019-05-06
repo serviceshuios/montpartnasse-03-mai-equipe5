@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/style" href="<%=request.getContextPath()%>/resources/css/style.css"> 
+<link rel="stylesheet" type="text/style"
+	href="<%=request.getContextPath()%>/resources/css/style.css">
 
 <title>Cargaison Aerienne</title>
 </head>
@@ -15,44 +16,43 @@
 	<div>
 		<f:form modelAttribute="aerienne" method="POST" action="saveAerienne">
 			<table>
-					
+
 				<tr>
-					<td><f:hidden path="idCargaison"/> </td>
+					<td><f:hidden path="idCargaison" /></td>
 				</tr>
 				<tr>
 					<td>Nom de la cargaison:</td>
 					<td><f:input path="nomCargaison" /></td>
-					<td><f:errors path="nomCargaison" cssClass="error"/></td>
+					<td><f:errors path="nomCargaison" cssClass="error" /></td>
 				</tr>
 				<tr>
 					<td>Départ:</td>
 					<td><f:input path="depart" /></td>
-					<td><f:errors path="depart" cssClass="error"/></td>
+					<td><f:errors path="depart" cssClass="error" /></td>
 				</tr>
 				<tr>
 					<td>Destination:</td>
 					<td><f:input path="destination" /></td>
-					<td><f:errors path="destination" cssClass="error"/></td>
+					<td><f:errors path="destination" cssClass="error" /></td>
 				</tr>
-					<tr>
+				<tr>
 					<td>Numéro de vol:</td>
 					<td><f:input path="numVol" /></td>
-					<td><f:errors path="numVol" cssClass="error"/></td>
-					</tr>
-					<tr>
+					<td><f:errors path="numVol" cssClass="error" /></td>
+				</tr>
+				<tr>
 					<td>Taxe:</td>
 					<td><f:input path="taxe" /></td>
-					<td><f:errors path="taxe" cssClass="error"/></td>
-					</tr>
-					
-				</td>				
+					<td><f:errors path="taxe" cssClass="error" /></td>
+				</tr>
+			
 				<tr>
 					<td><input type="submit" value="enregistrer" /></td>
 				</tr>
 			</table>
 		</f:form>
 	</div>
-	
+
 	<div id="listProduits">
 		<table class="table1">
 			<tr>
@@ -64,9 +64,8 @@
 				<th>Taxe</th>
 				<th>SUPPRIMER</th>
 				<th>MODIFIER</th>
-				<th>Société</th>
 			</tr>
-			<c:forEach var="a" items="${cargaisons}">
+			<c:forEach var="a" items="${aeriennes}">
 				<tr>
 					<td>${a.idCargaison}</td>
 					<td>${a.nomCargaison}</td>
@@ -74,9 +73,8 @@
 					<td>${a.destination}</td>
 					<td>${a.numVol}</td>
 					<td>${a.taxe}</td>
-					<td><a href="deleteAerienne?idCargaison=${a.idCargaison}">supprimer</a></td>  
+					<td><a href="deleteAerienne?idCargaison=${a.idCargaison}">supprimer</a></td>
 					<td><a href="editAerienne?idCargaison=${a.idCargaison}">editer</a></td>
-					<td>${a.societe.nomSociete}</td>
 				</tr>
 			</c:forEach>
 		</table>

@@ -5,7 +5,11 @@ import javax.persistence.Entity;
 
 import org.springframework.stereotype.Component;
 
-
+/**
+ * 
+ * @author IN-MP-026
+ *
+ */
 @Entity
 @DiscriminatorValue("AERI")
 @Component

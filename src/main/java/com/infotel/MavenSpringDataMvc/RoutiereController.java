@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.infotel.MavenSpringDataMvc.metier.Routiere;
+import com.infotel.MavenSpringDataMvc.metier.SocieteTransport;
 import com.infotel.MavenSpringDataMvc.service.Iservice;
 /**
  * Handles requests for the application Routiere
@@ -35,12 +36,16 @@ public class RoutiereController {
 	            service.ajouterRoutiere(routiere);
 	            model.addAttribute("routiere", new Routiere());
 	    		model.addAttribute("routieres", service.findAllRoutieres());
+	    		 model.addAttribute("societeTransport", new SocieteTransport());
+	    		model.addAttribute("societeTransports", service.findAllSocieteTransports());
 	            return "routiere";
 	            
 	        } else {
 	            service.modifierRoutiere(routiere);
 	            model.addAttribute("routiere", new Routiere());
 	    		model.addAttribute("routieres", service.findAllRoutieres());
+	    		model.addAttribute("societeTransport", new SocieteTransport());
+	    		model.addAttribute("societeTransports", service.findAllSocieteTransports());
 	            return "routiere";
 	        }
 	}

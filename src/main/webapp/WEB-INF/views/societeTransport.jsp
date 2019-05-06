@@ -36,8 +36,6 @@
 					<td><f:errors path="dateCreation" cssClass="error"/></td>
 				</tr>
 				
-
-				
 				<tr>
 					<td><input type="submit" value="enregistrer" /></td>
 				</tr>
@@ -54,7 +52,6 @@
 				<th>Date de création:</th>
 				<th>SUPPRIMER</th>
 				<th>MODIFIER</th>
-		<!-- 	<th>Nom de la cargaison:</th> -->
 				
 			</tr>
 			<c:forEach var="st" items="${societeTransports}">
