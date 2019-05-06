@@ -10,7 +10,7 @@ public interface Iservice {
 	public int modifierCargaison (Cargaison c);
 	public void supprimerCargaison (int idCargaison);
 	public Iterable<Cargaison> findAllCargaisons();
-	public Optional<Cargaison> affichageCargaison(int idCargaison);
+	public Cargaison affichageCargaison(int idCargaison);
 	
 	public SocieteTransport ajouterSocieteTransport (SocieteTransport st);
 	public int modifierSocieteTransport (SocieteTransport st);

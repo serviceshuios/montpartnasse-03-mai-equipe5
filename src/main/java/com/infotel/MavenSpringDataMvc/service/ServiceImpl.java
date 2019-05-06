@@ -61,9 +61,9 @@ public class ServiceImpl implements Iservice {
 	}
 
 	@Override
-	public Optional<Cargaison> affichageCargaison(int idCargaison) {
+	public Cargaison affichageCargaison(int idCargaison) {
 		
-		return cargaisonRepository.findById(idCargaison);
+		return cargaisonRepository.findById(idCargaison).get();
 	}
 
 	@Override
