@@ -5,66 +5,50 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.infotel.MavenSpringDataMvc.dao.CargaisonRepository;
+import com.infotel.MavenSpringDataMvc.dao.AerienneRepository;
+import com.infotel.MavenSpringDataMvc.dao.RoutiereRepository;
 import com.infotel.MavenSpringDataMvc.dao.SocieteTransportRepository;
+import com.infotel.MavenSpringDataMvc.metier.Aerienne;
 import com.infotel.MavenSpringDataMvc.metier.Cargaison;
+import com.infotel.MavenSpringDataMvc.metier.Routiere;
 import com.infotel.MavenSpringDataMvc.metier.SocieteTransport;
 
 @Service (value="service")
 public class ServiceImpl implements Iservice {
 	
 	@Autowired
-	CargaisonRepository cargaisonRepository;
+	AerienneRepository aerienneRepository;
+	@Autowired 
+	RoutiereRepository routiereRepository;
 	@Autowired
 	SocieteTransportRepository societeTransportRepository;
 	
-	
 
-	public CargaisonRepository getCargaisonrepository() {
-		return cargaisonRepository;
+	public AerienneRepository getAerienneRepository() {
+		return aerienneRepository;
 	}
 
-	public void setCargaisonrepository(CargaisonRepository cargaisonrepository) {
-		this.cargaisonRepository = cargaisonrepository;
+	public void setAerienneRepository(AerienneRepository aerienneRepository) {
+		this.aerienneRepository = aerienneRepository;
 	}
 
-	public SocieteTransportRepository getSocieteTransportrepository() {
+	public RoutiereRepository getRoutiereRepository() {
+		return routiereRepository;
+	}
+
+	public void setRoutiereRepository(RoutiereRepository routiereRepository) {
+		this.routiereRepository = routiereRepository;
+	}
+
+	public SocieteTransportRepository getSocieteTransportRepository() {
 		return societeTransportRepository;
 	}
 
-	public void setSocieteTransportrepository(SocieteTransportRepository societeTransportrepository) {
-		this.societeTransportRepository = societeTransportrepository;
+	public void setSocieteTransportRepository(SocieteTransportRepository societeTransportRepository) {
+		this.societeTransportRepository = societeTransportRepository;
 	}
 
-	@Override
-	public Cargaison ajouterCargaison(Cargaison c) {
-		
-		return cargaisonRepository.save(c);
-	}
-
-	@Override
-	public Cargaison modifierCargaison(Cargaison c) {
-		return cargaisonRepository.save(c);
-		}
-
-	@Override
-	public void supprimerCargaison(int idCargaison) {
-		cargaisonRepository.deleteById(idCargaison);
-		
-	}
-
-	@Override
-	public Iterable<Cargaison> findAllCargaisons() {
-		
-		return cargaisonRepository.findAll();
-	}
-
-	@Override
-	public Cargaison affichageCargaison(int idCargaison) {
-		
-		return cargaisonRepository.findById(idCargaison).get();
-	}
-
+	
 	@Override
 	public SocieteTransport ajouterSocieteTransport(SocieteTransport st) {
 		
@@ -92,6 +76,66 @@ public class ServiceImpl implements Iservice {
 	@Override
 	public void supprimerSocieteTransport(int idSociete) {
 		societeTransportRepository.deleteById(idSociete);
+	}
+
+	@Override
+	public Routiere ajouterRoutiere(Routiere r) {
+		
+		return routiereRepository.save(r);
+	}
+
+	@Override
+	public int modifierRoutiere(Routiere r) {
+		routiereRepository.save(r);
+		return 1;
+	}
+
+	@Override
+	public void supprimerRoutiere(int idCargaison) {
+		routiereRepository.deleteById(idCargaison);
+		
+	}
+
+	@Override
+	public Iterable<Routiere> findAllRoutieres() {
+		// TODO Auto-generated method stub
+		return routiereRepository.findAll();
+	}
+
+	@Override
+	public Optional<Routiere> affichageRoutiere(int idCargaison) {
+		// TODO Auto-generated method stub
+		return routiereRepository.findById(idCargaison);
+	}
+
+	@Override
+	public Aerienne ajouterAerienne(Aerienne a) {
+		// TODO Auto-generated method stub
+		return aerienneRepository.save(a);
+	}
+
+	@Override
+	public int modifierAerienne(Aerienne a) {
+		aerienneRepository.save(a);
+		return 1;
+	}
+
+	@Override
+	public void supprimerAerienne(int idCargaison) {
+		aerienneRepository.deleteById(idCargaison);
+		
+	}
+
+	@Override
+	public Iterable<Aerienne> findAllAeriennes() {
+		// TODO Auto-generated method stub
+		return aerienneRepository.findAll();
+	}
+
+	@Override
+	public Aerienne affichageAerienne(int idCargaison) {
+		// TODO Auto-generated method stub
+		return aerienneRepository.findById(idCargaison).get();
 	}
 
 
