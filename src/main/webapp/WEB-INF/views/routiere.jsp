@@ -54,6 +54,7 @@
 			</table>
 		</f:form>
 	</div>
+	
 	<div id="listProduits">
 		<table class="table1">
 			<tr>
