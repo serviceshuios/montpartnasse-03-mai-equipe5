@@ -5,6 +5,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.infotel.MavenSpringDataMvc.metier.SocieteTransport;
 
+/**
+ * 
+ * repository de SocieteTransport
+ *
+ */
+
 @Transactional
 public interface SocieteTransportRepository extends JpaRepository <SocieteTransport, Integer>{
 

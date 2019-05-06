@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.infotel.MavenSpringDataMvc.metier.Routiere;
 import com.infotel.MavenSpringDataMvc.service.Iservice;
-
+/**
+ * Handles requests for the application Routiere
+ */
 @Controller
 public class RoutiereController {
 	
@@ -22,7 +24,11 @@ public class RoutiereController {
 		model.addAttribute("routieres", service.findAllRoutieres());
 		return "routiere"; 
 	}
-
+	
+	/**
+	 * ajout/modif d'une cargaison Routiere
+	 */
+	
 	@RequestMapping(value = "/saveRoutiere")
 	    public String save(Routiere routiere,  Model model) {
 	        if (routiere.getIdCargaison() == 0) {
@@ -39,6 +45,9 @@ public class RoutiereController {
 	        }
 	}
 
+	/**
+	 * suppression d'une cargaison Routiere
+	 */
 	
 	@RequestMapping(value = "/deleteRoutiere")
     public String delete(@RequestParam int idCargaison, Model model) {
@@ -47,6 +56,11 @@ public class RoutiereController {
 		model.addAttribute("routieres", service.findAllRoutieres());
         return "routiere";
     }
+	
+	/**
+	 * get des infos d'une cargaison Routiere
+	 */
+	
     @RequestMapping(value = "/editRoutiere")
     public String edit(@RequestParam int idCargaison, Model model) {
     	 model.addAttribute("routiere", service.affichageRoutiere(idCargaison));

@@ -5,6 +5,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.infotel.MavenSpringDataMvc.metier.Aerienne;
 
+/**
+ * 
+ * repository de Cargaison Aerienne
+ *
+ */
 @Transactional
 public interface AerienneRepository extends JpaRepository<Aerienne, Integer>{
 }

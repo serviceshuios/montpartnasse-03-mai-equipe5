@@ -64,6 +64,7 @@
 				<th>Taxe</th>
 				<th>SUPPRIMER</th>
 				<th>MODIFIER</th>
+				<th>Société</th>
 			</tr>
 			<c:forEach var="a" items="${cargaisons}">
 				<tr>
@@ -75,6 +76,7 @@
 					<td>${a.taxe}</td>
 					<td><a href="deleteAerienne?idCargaison=${a.idCargaison}">supprimer</a></td>  
 					<td><a href="editAerienne?idCargaison=${a.idCargaison}">editer</a></td>
+					<td>${a.societe.nomSociete}</td>
 				</tr>
 			</c:forEach>
 		</table>
