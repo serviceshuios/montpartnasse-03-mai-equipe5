@@ -21,7 +21,7 @@ public class SocieteTransport {
 		private int idSociete; 
 		private String nomSociete;
 		private String numSiret;
-		private Date dateCreation;
+		private Date dateCreation; //jour/mois/annee
 		
 		@OneToMany (mappedBy="societeTransport")
 		private List<Cargaison> cargaisons;

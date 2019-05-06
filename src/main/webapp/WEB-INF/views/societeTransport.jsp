@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/style" href="<%=request.getContextPath()%>/resources/css/style.css">
+<!--  <link rel="stylesheet" type="text/style" href="<%=request.getContextPath()%>/resources/css/style.css"> -->
 <link rel="stylesheet" href="resources/css/style.css" />
 
 <title>Sociéte de transport</title>
@@ -14,7 +14,7 @@
 <body>
 	<h2>CRUD Societe de transport</h2>
 	<div>
-		<f:form modelAttribute="societeTransport" method="POST" action="saveSocieteTransport">
+		<f:form modelAttribute="societeTransport" method="POST" action="saveSociete">
 			<table>
 				<tr>
 					<td><f:hidden path="idSociete"/> </td>
@@ -71,7 +71,6 @@
 					<td>${st.nomSociete}</td>
 					<td>${st.numSiret}</td>
 					<td>${st.dateCreation}</td>
-					
 					<td><a href="deleteSociete?idSociete=${st.idSociete}">supprimer</a></td>  <!-- ?id vient de la classe Societe -->
 					<td><a href="editSociete?idSociete=${st.idSociete}">editer</a></td>
 				</tr>
