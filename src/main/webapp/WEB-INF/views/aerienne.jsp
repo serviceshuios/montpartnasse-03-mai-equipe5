@@ -73,8 +73,8 @@
 					<td>${a.destination}</td>
 					<td>${a.numVol}</td>
 					<td>${a.taxe}</td>
-					<td><a href="deleteCargaison?idCargaison=${a.idCargaison}">supprimer</a></td>  
-					<td><a href="editCargaison?idCargaison=${a.idCargaison}">editer</a></td>
+					<td><a href="deleteAerienne?idCargaison=${a.idCargaison}">supprimer</a></td>  
+					<td><a href="editAerienne?idCargaison=${a.idCargaison}">editer</a></td>
 				</tr>
 			</c:forEach>
 		</table>

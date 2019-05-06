@@ -19,7 +19,6 @@ public class RoutiereController {
 	@RequestMapping(value = "/routiere", method = RequestMethod.GET)
 	public String lister(Model model) {
 		model.addAttribute("routiere", new Routiere());
-	
 		model.addAttribute("cargaisons", service.findAllCargaisons());
 		return "routiere"; 
 	}
@@ -31,6 +30,7 @@ public class RoutiereController {
 	            model.addAttribute("routiere", new Routiere());
 	            model.addAttribute("cargaisons", service.findAllCargaisons());
 	            return "routiere";
+	            
 	        } else {
 	            service.modifierCargaison(routiere);
 	            model.addAttribute("routiere", new Routiere());
@@ -40,14 +40,14 @@ public class RoutiereController {
 	}
 
 	
-	@RequestMapping(value = "/deleteCargaison")
+	@RequestMapping(value = "/deleteRoutiere")
     public String delete(@RequestParam int idCargaison, Model model) {
         service.supprimerCargaison(idCargaison);
         model.addAttribute("routiere", new Routiere());
         model.addAttribute("cargaisons", service.findAllCargaisons());
         return "routiere";
     }
-    @RequestMapping(value = "/editCargaison")
+    @RequestMapping(value = "/editRoutiere")
     public String edit(@RequestParam int idCargaison, Model model) {
     	 model.addAttribute("routiere", service.affichageCargaison(idCargaison));
          model.addAttribute("cargaisons", service.findAllCargaisons());

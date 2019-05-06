@@ -36,15 +36,7 @@
 					<td><f:errors path="dateCreation" cssClass="error"/></td>
 				</tr>
 				
-<%--  				<f:select path="cargaison">   --%>
-<%-- 								 <f:option value="0" label="---"/> --%>
-<%-- 								<c:if test="${!empty cargaisons}"> --%>
-<%-- 									<f:options items="${cargaisons}" value="${cargaison.idCargaison}">  --%>
-<%-- 									<c:out value="${cargaison.nomCargaison}, ${cargaison.depart}, ${cargaison.destination}"></c:out> --%>
-<%-- 									</f:options> --%>
-<!-- 									</> -->
-<%-- 								</c:if> --%>
-<%-- 					</f:select> --%>
+
 				
 				<tr>
 					<td><input type="submit" value="enregistrer" /></td>
@@ -73,7 +65,6 @@
 					<td>${st.dateCreation}</td>
 					<td><a href="deleteSociete?idSociete=${st.idSociete}">supprimer</a></td>  <!-- ?id vient de la classe Societe -->
 					<td><a href="editSociete?idSociete=${st.idSociete}">editer</a></td>
-				<!-- 	<td>${st.cargaisons.idCargaison}</td> -->
 				</tr>
 			</c:forEach>
 		</table>
