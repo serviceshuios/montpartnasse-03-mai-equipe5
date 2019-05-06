@@ -6,39 +6,67 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/style" href="<%=request.getContextPath()%>/resources/css/style.css">
+<!--  <link rel="stylesheet" type="text/style" href="<%=request.getContextPath()%>/resources/css/style.css"> -->
 <link rel="stylesheet" href="resources/css/style.css" />
 
-<title>Insert title here</title>
+<title>Cargaison</title>
 </head>
 <body>
-	<h2>CRUD ADRESSES</h2>
+	<h2>CRUD</h2>
 	<div>
-		<f:form modelAttribute="adresse" method="POST" action="saveAdresse">
+		<f:form modelAttribute="cargaison" method="POST" action="saveCargaison">
 			<table>
+					
 				<tr>
-					<td><f:hidden path="idAdresse"/> </td>
+					<td><f:hidden path="idCargaison"/> </td>
 				</tr>
 				<tr>
-					<td>Nr:</td>
-					<td><f:input path="numRue" /></td>
-					<td><f:errors path="numRue" cssClass="error"/></td>
+					<td>Nom de la cargaison:</td>
+					<td><f:input path="nomCargaison" /></td>
+					<td><f:errors path="nomCargaison" cssClass="error"/></td>
 				</tr>
 				<tr>
-					<td>Rue:</td>
-					<td><f:input path="nomRue" /></td>
-					<td><f:errors path="nomRue" cssClass="error"/></td>
+					<td>Départ:</td>
+					<td><f:input path="depart" /></td>
+					<td><f:errors path="depart" cssClass="error"/></td>
 				</tr>
 				<tr>
-					<td>Cp:</td>
-					<td><f:input path="cp" /></td>
-					<td><f:errors path="cp" cssClass="error"/></td>
+					<td>Destination:</td>
+					<td><f:input path="destination" /></td>
+					<td><f:errors path="destination" cssClass="error"/></td>
 				</tr>
-				<tr>
-					<td>Ville:</td>
-					<td><f:input path="ville" /></td>
-					<td><f:errors path="ville" cssClass="error"/></td>
-				</tr>
+			
+			<td><form:label path = "cargaison">Type de Cargaison</form:label>
+               <td>
+                  <form:radiobutton path = "cargaison" value = "routiere" label = "Routiere" />
+                  <form:radiobutton path = "cargaison" value = "aerienne" label = "Aerienne" />
+               </td>
+					<c:if test="${(cargaison == routiere)}">
+					<tr>
+					<td>Immatriculation:</td>
+					<td><f:input path="immatriculation" /></td>
+					<td><f:errors path="immatriculation" cssClass="error"/></td>
+					</tr>
+					<tr>
+					<td>Peage:</td>
+					<td><f:input path="peage" /></td>
+					<td><f:errors path="peage" cssClass="error"/></td>
+					</tr>
+					</c:if>
+					
+					<c:else test="${(cargaison == aerienne)}">
+					<tr>
+					<td>NumVol:</td>
+					<td><f:input path="numVol" /></td>
+					<td><f:errors path="numVol" cssClass="error"/></td>
+					</tr>
+					<tr>
+					<td>Taxe:</td>
+					<td><f:input path="taxe" /></td>
+					<td><f:errors path="taxe" cssClass="error"/></td>
+					</tr>
+					</c:else>
+				</td>				
 				<tr>
 					<td><input type="submit" value="enregistrer" /></td>
 				</tr>
@@ -49,22 +77,20 @@
 		<table class="table1">
 			<tr>
 				<th>ID</th>
-				<th>Nr</th>
-				<th>Rue</th>
-				<th>Cp</th>
-				<th>Ville</th>
+				<th>NomCargaison</th>
+				<th>Depart</th>
+				<th>Destination</th>
 				<th>SUPPRIMER</th>
 				<th>MODIFIER</th>
 			</tr>
-			<c:forEach var="a" items="${adresses}">
+			<c:forEach var="c" items="${cargaisons}">
 				<tr>
-					<td>${a.idAdresse}</td>
-					<td>${a.numRue}</td>
-					<td>${a.nomRue}</td>
-					<td>${a.cp}</td>
-					<td>${a.ville}</td>
-					<td><a href="deleteAdresse?idAdresse=${a.idAdresse}">supprimer</a></td>  <!-- ?id vient de la classe Personne -->
-					<td><a href="editAdresse?idAdresse=${a.idAdresse}">editer</a></td>
+					<td>${c.idCargaison}</td>
+					<td>${c.nomCargaison}</td>
+					<td>${c.depart}</td>
+					<td>${c.destination}</td>
+					<td><a href="deleteCargaison?idCargaison=${c.idCargaison}">supprimer</a></td>  <!-- ?id vient de la classe Personne -->
+					<td><a href="editCargaison?idCargaison=${c.idCargaison}">editer</a></td>
 				</tr>
 			</c:forEach>
 		</table>
