@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.infotel.MavenSpringDataMvc.metier.SocieteTransport;
 import com.infotel.MavenSpringDataMvc.service.Iservice;
-
+/**
+ * 
+ * Handles requests for the application SocieteTransport
+ *
+ */
 
 @Controller
 public class SocieteTransportController {
