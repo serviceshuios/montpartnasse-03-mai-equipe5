@@ -9,62 +9,71 @@
 <link rel="stylesheet" type="text/style" href="<%=request.getContextPath()%>/resources/css/style.css">
 <link rel="stylesheet" href="resources/css/style.css" />
 
-<title>Insert title here</title>
+<title>Sociéte de transport</title>
 </head>
 <body>
-	<h2>CRUD ADRESSES</h2>
+	<h2>CRUD Societe de transport</h2>
 	<div>
-		<f:form modelAttribute="adresse" method="POST" action="saveAdresse">
+		<f:form modelAttribute="societeTransport" method="POST" action="saveSocieteTransport">
 			<table>
 				<tr>
-					<td><f:hidden path="idAdresse"/> </td>
+					<td><f:hidden path="idSociete"/> </td>
 				</tr>
 				<tr>
-					<td>Nr:</td>
-					<td><f:input path="numRue" /></td>
-					<td><f:errors path="numRue" cssClass="error"/></td>
+					<td>Nom de la société:</td>
+					<td><f:input path="nomSociete" /></td>
+					<td><f:errors path="nomSociete" cssClass="error"/></td>
 				</tr>
 				<tr>
-					<td>Rue:</td>
-					<td><f:input path="nomRue" /></td>
-					<td><f:errors path="nomRue" cssClass="error"/></td>
+					<td>Numéro Siret:</td>
+					<td><f:input path="numSiret" /></td>
+					<td><f:errors path="numSiret" cssClass="error"/></td>
 				</tr>
 				<tr>
-					<td>Cp:</td>
-					<td><f:input path="cp" /></td>
-					<td><f:errors path="cp" cssClass="error"/></td>
+					<td>Date de création:</td>
+					<td><f:input path="dateCreation" /></td>
+					<td><f:errors path="dateCreation" cssClass="error"/></td>
 				</tr>
-				<tr>
-					<td>Ville:</td>
-					<td><f:input path="ville" /></td>
-					<td><f:errors path="ville" cssClass="error"/></td>
-				</tr>
+				
+<!-- 				<select class="form-group" name="idCargaison"> -->
+<!-- 						<optgroup> -->
+<!-- 								 <option value="0">-</option> -->
+<%-- 								<c:if test="${!empty cargaisons}"> --%>
+<%-- 									<c:forEach items="${cargaisons}" var="c">  --%>
+<%-- 									<option value="${c.idCargaison}"><c:out value="${c.nomCargaison}, ${c.depart}, ${c.destination}"></c:out> --%>
+<!-- 									</option> -->
+<%-- 									</c:forEach> --%>
+<%-- 								</c:if> --%>
+<!-- 						</optgroup> -->
+<!-- 					</select> -->
+				
 				<tr>
 					<td><input type="submit" value="enregistrer" /></td>
 				</tr>
 			</table>
 		</f:form>
 	</div>
+	
 	<div id="listProduits">
 		<table class="table1">
 			<tr>
 				<th>ID</th>
-				<th>Nr</th>
-				<th>Rue</th>
-				<th>Cp</th>
-				<th>Ville</th>
+				<th>Nom de la société:</th>
+				<th>Numéro Siret:</th>
+				<th>Date de création:</th>
+<!-- 				<th>Cargaison</th> -->
 				<th>SUPPRIMER</th>
 				<th>MODIFIER</th>
 			</tr>
-			<c:forEach var="a" items="${adresses}">
+			<c:forEach var="st" items="${societeTransports}">
 				<tr>
-					<td>${a.idAdresse}</td>
-					<td>${a.numRue}</td>
-					<td>${a.nomRue}</td>
-					<td>${a.cp}</td>
-					<td>${a.ville}</td>
-					<td><a href="deleteAdresse?idAdresse=${a.idAdresse}">supprimer</a></td>  <!-- ?id vient de la classe Personne -->
-					<td><a href="editAdresse?idAdresse=${a.idAdresse}">editer</a></td>
+					<td>${st.idSociete}</td>
+					<td>${st.nomSociete}</td>
+					<td>${st.numSiret}</td>
+					<td>${st.dateCreation}</td>
+					
+					<td><a href="deleteSociete?idSociete=${st.idSociete}">supprimer</a></td>  <!-- ?id vient de la classe Societe -->
+					<td><a href="editSociete?idSociete=${st.idSociete}">editer</a></td>
 				</tr>
 			</c:forEach>
 		</table>
