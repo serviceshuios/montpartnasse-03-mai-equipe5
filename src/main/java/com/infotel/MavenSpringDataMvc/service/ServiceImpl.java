@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.infotel.MavenSpringDataMvc.dao.AerienneRepository;
+import com.infotel.MavenSpringDataMvc.dao.CargaisonRepository;
 import com.infotel.MavenSpringDataMvc.dao.RoutiereRepository;
 import com.infotel.MavenSpringDataMvc.dao.SocieteTransportRepository;
 import com.infotel.MavenSpringDataMvc.metier.Aerienne;
@@ -27,7 +28,17 @@ public class ServiceImpl implements Iservice {
 	RoutiereRepository routiereRepository;
 	@Autowired
 	SocieteTransportRepository societeTransportRepository;
+	@Autowired
+	CargaisonRepository cargaisonRepository;
 	
+
+	public CargaisonRepository getCargaisonRepository() {
+		return cargaisonRepository;
+	}
+
+	public void setCargaisonRepository(CargaisonRepository cargaisonRepository) {
+		this.cargaisonRepository = cargaisonRepository;
+	}
 
 	public AerienneRepository getAerienneRepository() {
 		return aerienneRepository;
@@ -193,8 +204,14 @@ public class ServiceImpl implements Iservice {
 	 */
 	@Override
 	public int ajouterCargaisonSociete(int idSociete, int idCargaison) {
-		routiereRepository.ajouterCargaisonSociete(idSociete, idCargaison);
+		cargaisonRepository.ajouterCargaisonSociete(idSociete, idCargaison);
 		return idCargaison;
+	}
+
+	@Override
+	public Iterable<Cargaison> findAllCargaisons() {
+		// TODO Auto-generated method stub
+		return cargaisonRepository.findAll();
 	}
 
 

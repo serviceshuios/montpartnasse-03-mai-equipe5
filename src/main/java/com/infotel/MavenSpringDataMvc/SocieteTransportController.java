@@ -1,12 +1,17 @@
 package com.infotel.MavenSpringDataMvc;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.infotel.MavenSpringDataMvc.metier.Aerienne;
+import com.infotel.MavenSpringDataMvc.metier.Cargaison;
+import com.infotel.MavenSpringDataMvc.metier.Routiere;
 import com.infotel.MavenSpringDataMvc.metier.SocieteTransport;
 import com.infotel.MavenSpringDataMvc.service.Iservice;
 /**
@@ -57,4 +62,25 @@ public class SocieteTransportController {
         model.addAttribute("societeTransports", service.findAllSocieteTransports());
         return "societeTransport";
     }
-}
+    
+    
+	@RequestMapping(value = "/update", method = RequestMethod.GET)
+	public String listerassociation(Model model) {
+		model.addAttribute("societeTransport", new SocieteTransport());
+		model.addAttribute("societeTransports", service.findAllSocieteTransports());
+    	model.addAttribute("cargaisons", service.findAllCargaisons());
+
+		return "update"; 
+	}
+	
+    @RequestMapping(value = "/updateSave")
+    public String association(@RequestParam int idSociete, @RequestParam int idCargaison, Model model) {
+    	
+    		 	service.ajouterCargaisonSociete(idSociete, idCargaison);
+
+    	        model.addAttribute("societeTransports", service.findAllSocieteTransports());
+    	    	model.addAttribute("cargaisons", service.findAllCargaisons());
+    	 
+    	    	return "update";
+    	 
+}}
