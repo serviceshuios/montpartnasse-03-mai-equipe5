@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!--  <link rel="stylesheet" type="text/style" href="<%=request.getContextPath()%>/resources/css/style.css"> -->
-<link rel="stylesheet" href="resources/css/style.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/style.css" />
 
 <title>Sociéte de transport</title>
 </head>

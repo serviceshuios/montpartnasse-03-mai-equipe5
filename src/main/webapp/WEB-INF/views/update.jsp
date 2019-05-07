@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/style"
+<link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/style.css">
 
 <title>Association</title>
@@ -14,39 +14,42 @@
 <body>
 	<h2>CRUD</h2>
 	<div>
-		<f:form modelAttribute="societeTransport" method="POST" action="updateSave">
-
+		<f:form modelAttribute="societeTransport" method="POST"	action="updateSave">
 			<td>Id de Societe:</td>
 			<td><select name="idSociete">
-						<optgroup>
-								<option value="0">-</option>
-								<c:if test="${!empty societeTransports}">
-									<c:forEach items="${societeTransports}" var="st"> 
-									<option value="${st.idSociete}"><c:out value="${st.nomSociete}"></c:out> </option>
-									</c:forEach>
-								</c:if>
-						</optgroup>
-				</select></td>
-			<td>
-			
-			<td>Id de Cargaison:</td>
-			<td><select name="idCargaison">
 					<optgroup>
-								<option value="0">-</option>
-								<c:if test="${!empty cargaisons}">
-									<c:forEach items="${cargaisons}" var="c"> 
-									<option value="${c.idCargaison}"><c:out value="${c.nomCargaison}"></c:out> </option>
-									</c:forEach>
-								</c:if>
-						</optgroup>
-				</select></td>
-			<td>
+						<option value="0">-</option>
+						<c:if test="${!empty societeTransports}">
+							<c:forEach items="${societeTransports}" var="st">
+								<option value="${st.idSociete}"><c:out
+										value="${st.nomSociete}"></c:out>
+								</option>
+							</c:forEach>
+						</c:if>
+					</optgroup>
+			</select></td>
 			
-			<tr>
-					<td><input type="submit" value="enregistrer" /></td>
-				</tr>
-				
-		</f:form>
+			</br>
+			
+		<td>Id de Cargaison:</td>
+		<td><select name="idCargaison">
+				<optgroup>
+					<option value="0">-</option>
+					<c:if test="${!empty cargaisons}">
+						<c:forEach items="${cargaisons}" var="c">
+							<option value="${c.idCargaison}"><c:out
+									value="${c.nomCargaison}"></c:out>
+							</option>
+						</c:forEach>
+					</c:if>
+				</optgroup>
+		</select></td>
 	</div>
-	</body>
+	
+	
+		<td><input type="submit" value="enregistrer" /></td>
+
+	</f:form>
+	</div>
+</body>
 </html>
